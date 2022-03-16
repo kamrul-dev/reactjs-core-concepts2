@@ -6,9 +6,18 @@ function App() {
 
   return (
     <div className="App">
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <ExternalUsers></ExternalUsers>
     </div>
   );
+}
+
+function ExternalUsers (){
+  return(
+    <div>
+      <h2>External Users</h2>
+    </div>
+  )
 }
 
 
