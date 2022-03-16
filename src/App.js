@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const product = [
+  const products = [
     {name: 'laptop', price: 53000},
     {name: 'phone', price: 9300},
     {name: 'watch', price: 3300},
@@ -10,10 +10,13 @@ function App() {
   ]
   return (
     <div className="App">
+      {
+        products.map(product => <Product name={product.name} price={product.price}></Product>)
+      }
       {/* <Product name="Laptop" price="47000"></Product>
       <Product name="phone" price="7500"></Product>
       <Product name="Watch" price="3500"></Product> */}
-      
+
     </div>
   );
 }
