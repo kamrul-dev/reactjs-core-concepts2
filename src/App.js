@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -12,9 +12,16 @@ function App() {
   );
 }
 
-function ExternalUsers (){
+// fetch the users data from api
+function ExternalUsers() {
   const [users, setUsers] = useState([]);
-  return(
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }, [])
+
+  return (
     <div>
       <h2>External Users</h2>
     </div>
@@ -22,12 +29,12 @@ function ExternalUsers (){
 }
 
 
-function Counter(){
+function Counter() {
   const [count, setCount] = useState(55);  // Initial state
 
-  const increaseCount = () =>setCount(count + 1);
+  const increaseCount = () => setCount(count + 1);
   const decreaseCount = () => setCount(count - 1);
-  
+
 
   // const increaseCount = () =>{
   //   const newCount = count + 1;
